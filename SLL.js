@@ -9,12 +9,19 @@ class SinglyLinkedList {
   constructor() {
     this.head = null;
     this.tail = null;
-    this.length;
+    this.length = 0;;
+  }
+
+  push(val) {
+    const newNode = new Node(val);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = this.head;
+    } else {
+      this.tail.next = newNode;
+      this.tail = newNode;
+    }
+    this.length++;
+    return this;
   }
 }
-
-var newNode = new Node('Hello');
-newNode.next = new Node('not');
-newNode.next.next = new Node('bad');
-
-console.log('ehllo')
